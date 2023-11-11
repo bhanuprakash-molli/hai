@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Reader</title>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            min-height: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing:border-box;
+           box-shadow: 0px 10px 20px 5px rgba(160, 248, 248, 0.7);
+            /* box-shadow: 0px 10px 20px 2px rgba(8, 7, 7, 0.1); */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            /* display: none; */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            /* justify-content: flex-start; */
+            /* cursor: pointer; */
+            /* float: inline-end; */
+
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        #text{
+            font-size: 20px;
+            line-height: 2.5;
+            min-height: 100%;
+            min-width: 100%;
+            border: 0px solid;
+            font-family: 'Mukta';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- STORY TITLE -->
+        <h1>**The Unlikely Gift**</h1>
+    </header>
+    <main>
+       <nav> <h1>Chapter 1</h1></nav>
+        <div id="text"></div>
+        <!-- <footer><button id="next-button">Next Chapter</button></footer> -->
+    </main>
+
+    <script>
+       
+        
+        const textElement = document.getElementById("text");
+        const text = `Once upon a time, in a quaint little town named Evergreen, lived a young girl named Lily. Lily was known for her love of nature and her contagious laughter. It was Lily's birthday, and the entire town was buzzing with excitement, planning a surprise party for her.
+
+Little did Lily know that her friends and family were scheming behind her back to create a day filled with joy and unexpected moments. The town square was decorated with colorful balloons and fairy lights, and the aroma of freshly baked cookies wafted through the air.
+
+As Lily strolled through the town, oblivious to the preparations, her best friend Emma approached her with a mysterious grin. "Hey Lily, do you have plans for the day?" Emma asked.
+
+Lily shook her head, curious. "No, not really. Why?"
+
+Emma winked, "Oh, you'll see. Just follow me."
+
+Emma led Lily through a winding path, and as they turned a corner, the townsfolk shouted, "Surprise!" Confetti rained down, and Lily stood there, wide-eyed and utterly astonished.
+
+The day unfolded with one surprise after another. Lily's favorite musicians played a serenade, and her friends presented her with a scrapbook filled with cherished memories. As the sun dipped below the horizon, the town gathered around a bonfire, roasting marshmallows and sharing stories.
+
+Just when Lily thought the surprises were over, Emma handed her an intricately wrapped gift. Lily unwrapped it to find a small, enchanted lantern. Emma explained, "It's a gratitude lantern. Whenever you feel grateful, light it, and the warm glow will remind you of the love and joy surrounding you."
+
+Overwhelmed with emotion, Lily hugged her friends, realizing the greatest surprise of all was the love and effort they had poured into making her day unforgettable.
+
+As the night sky sparkled with stars, Lily lit her gratitude lantern, its glow matching the warmth in her heart. In that moment, she understood that life's most beautiful surprises often come from the hearts of those who care about you the most. And so, under the starlit sky, Lily cherished the unexpected gift of love that made her birthday the most magical day Evergreen had ever seen.`;
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 80);
+          }
+        }
+        type();
+        // if(type()){
+       
+        // }
+    </script>
+</body>
+</html>
